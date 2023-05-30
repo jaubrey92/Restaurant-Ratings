@@ -1,0 +1,10 @@
+<%- include('../partials/header') %>
+
+<h1>All Restaurants</h1>
+<% restaurants.forEach(function(r) { %>
+  <div><%= r.title %></div>
+  <div><%= r.cuisine %></div>
+  <div><%= r.price %></div>
+<% }); %>
+
+<%- include('../partials/footer') %>
