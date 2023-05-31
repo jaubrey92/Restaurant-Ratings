@@ -9,7 +9,7 @@ async function create(req, res) {
   req.body.user = req.user._id
   req.body.userName = req.user.name
   req.body.userAvatar = req.user.avatar
-  restaurant.reviews.push(req.body)
+  restaurant.ratings.push(req.body)
   try {
     await restaurant.save()
     res.redirect(`/restaurants/${restaurant._id}`)

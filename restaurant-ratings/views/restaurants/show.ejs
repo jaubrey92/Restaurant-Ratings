@@ -6,4 +6,54 @@
 <div>Price Range:</div>
 <div><%= restaurant.price %></div>
 
+<% if (user) { %>
+<form action="/restaurants/<%= restaurant._id %>/reviews" method="POST">
+  <label>Review: </label>
+  <textarea name="content" ></textarea>
+  <label>Score: </label>
+  <select name="score">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
+
+<form action="/restaurants/<%= restaurant._id %>/ratings" method="POST">
+  <label>Rate Your Employer: </label>
+  <textarea name="content" ></textarea>
+  <label>Score: </label>
+  <select name="score">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <input type="submit" value="Add Rating">
+</form>
+
+<% } %>
+
+<table>
+  <tr>
+    <th>Product Review</th>
+    <th>Average Score: </th>
+    <th>Company Rating</th>
+    <th>Average Score: </th>
+  </tr>
+  <tr>
+    <% restaurant.reviews.forEach(function(r) { %>
+      <td><%= r.content %></td>
+      <td><%= r.score %></td>
+    <% }) %>
+    <% restaurant.ratings.forEach(function(ra) { %>
+      <td><%= ra.content %></td>
+      <td><%= ra.score %></td>
+    <% }) %>
+  </tr>
+</table>
+
 <%- include('../partials/footer') %>
