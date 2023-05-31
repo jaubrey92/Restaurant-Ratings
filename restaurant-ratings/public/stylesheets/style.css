@@ -2,6 +2,7 @@ body {
   height: 100vh;
   width: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('https://media.vanityfair.com/photos/586ff60d6cbc6a28245ef9a6/master/w_2560%2Cc_limit/union-square-cafe-danny-meyers.jpg');
 }
 
 a {
@@ -10,6 +11,17 @@ a {
 
 nav {
   background: #00B7FF;
-  width: 100vmin;
+  width: 400px;
   padding: 3vmin;
+  border-radius: 10%;
+}
+
+body {
+  color: white;
+  background-color: gray;
+}
+
+.background {
+  background: light grey;
+  opacity: .5;
 }

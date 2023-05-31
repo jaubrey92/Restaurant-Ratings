@@ -5,6 +5,10 @@ const restaurantsCtrl = require('../controllers/restaurants')
 
 // GET /restaurants
 router.get('/', restaurantsCtrl.index)
+// GET /restaurants/new
+router.get('/new', restaurantsCtrl.new)
+// POST /restaurants
+router.post('/', restaurantsCtrl.create)
 
 /* GET users listing.
 router.get('/', function(req, res, next) {

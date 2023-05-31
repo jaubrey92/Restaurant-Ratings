@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<form action="/restaurants/" method="POST">
+  <label>Restaurant Name:</label>
+  <input type="text" name="title">
+  <label>Cuisine:</label>
+  <input type="text" name="cuisine">
+  <label>Price:</label>
+  <select name="price">
+    <option value="$">$</option>
+    <option value="$$">$$</option>
+    <option value="$$$">$$$</option>
+    <option value="$$$$">$$$$</option>
+  </select>
+  <input type="submit" value="Add Restaurant">
+</form>
+
+<%- include('../partials/footer') %>

@@ -7,6 +7,7 @@ const restaurantSchema = new Schema(
     cuisine: { type: String, required: true },
     price: {
       type: String,
+      required: true,
       enum: ['$', '$$', '$$$', '$$$$']
     }
   },
