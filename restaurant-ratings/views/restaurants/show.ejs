@@ -45,14 +45,24 @@
     <th>Average Score: </th>
   </tr>
   <tr>
+    <% if (restaurant.reviews.length) { %>
     <% restaurant.reviews.forEach(function(r) { %>
       <td><%= r.content %></td>
       <td><%= r.score %></td>
     <% }) %>
+    <% } else { %>
+      <td>No Reviews Yet</td>
+      <td></td>
+    <% } %>
+    <% if (restaurant.ratings.length) { %>
     <% restaurant.ratings.forEach(function(ra) { %>
       <td><%= ra.content %></td>
       <td><%= ra.score %></td>
     <% }) %>
+    <% } else { %>
+      <td>No Ratings Yet</td>
+      <td></td>
+    <% } %>
   </tr>
 </table>
 
