@@ -3,7 +3,8 @@ const Restaurant = require('../models/restaurant')
 module.exports = {
   index,
   new: newRestaurant,
-  create
+  create,
+  show
 }
 
 async function index(req, res) {
@@ -23,4 +24,9 @@ async function create(req, res) {
     console.log(err)
     res.render('restaurants/new', { errorMsg: err.message })
   }
+}
+
+async function show(req, res) {
+  const restaurant = await Restaurant.findById(req.params.id)
+  res.render('restaurants/show', { title: 'Ratings and Reviews', restaurant })
 }

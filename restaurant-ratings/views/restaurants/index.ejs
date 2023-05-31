@@ -4,6 +4,8 @@
   <div><%= r.title %></div>
   <div><%= r.cuisine %></div>
   <div><%= r.price %></div>
+  <br>
+  <a class="button" href="/restaurants/<%= r._id %>">Ratings</a>
 <% }); %>
 
 <%- include('../partials/footer') %>
