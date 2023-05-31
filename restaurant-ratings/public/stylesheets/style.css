@@ -5,15 +5,33 @@ body {
   background-image: url('https://media.vanityfair.com/photos/586ff60d6cbc6a28245ef9a6/master/w_2560%2Cc_limit/union-square-cafe-danny-meyers.jpg');
 }
 
+a:hover {
+  color: white;
+  text-decoration: none;
+  background-color: grey;
+  padding: 5px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  margin: 5px;
+}
+
 a {
   color: white;
+  text-decoration: none;
+  background-color: grey;
+  padding: 6px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: black;
+  margin: 5px;
 }
 
 nav {
   background: #00B7FF;
-  width: 400px;
+  width: 100vmin;
   padding: 3vmin;
-  border-radius: 10%;
+  border-radius: 10px;
 }
 
 body {
@@ -26,9 +44,18 @@ body {
   opacity: .5;
 }
 
+.button:hover {
+  background-color: #00B7FF;
+  border-radius: 10px;
+  padding: 4px;
+  border-color: blue;
+  border-style: solid;
+  text-decoration: none;
+}
+
 .button {
   background-color: #00B7FF;
-  border-radius: 50%;
+  border-radius: 10px;
   padding: 5px;
   border-color: blue;
   border-style: solid;
