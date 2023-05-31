@@ -16,7 +16,7 @@
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
-    <option value="5">5</option>
+    <option value="5" selected>5</option>
   </select>
   <input type="submit" value="Add Review">
 </form>
@@ -30,7 +30,7 @@
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
-    <option value="5">5</option>
+    <option value="5" selected>5</option>
   </select>
   <input type="submit" value="Add Rating">
 </form>
@@ -41,26 +41,46 @@
   <tr>
     <th>Product Review</th>
     <th>Average Score: </th>
+    <th></th>
     <th>Company Rating</th>
     <th>Average Score: </th>
+    <th></th>
   </tr>
   <tr>
     <% if (restaurant.reviews.length) { %>
     <% restaurant.reviews.forEach(function(r) { %>
+      <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
       <td><%= r.content %></td>
       <td><%= r.score %></td>
+      <td>
+        <% if (user?._id.equals(r.user)) { %>
+          <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        <% } %>
+      </td>
     <% }) %>
     <% } else { %>
       <td>No Reviews Yet</td>
       <td></td>
+      <td></td>
     <% } %>
     <% if (restaurant.ratings.length) { %>
     <% restaurant.ratings.forEach(function(ra) { %>
+      <td class="review-user"><img alt="avatar" src="<%= ra.userAvatar %>" referrerpolicy="no-referrer" ><%= ra.userName %></td>
       <td><%= ra.content %></td>
       <td><%= ra.score %></td>
+      <td>
+        <% if (user?._id.equals(ra.user)) { %>
+          <form action="/ratings/<%= ra._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        <% } %>
+      </td>
     <% }) %>
     <% } else { %>
       <td>No Ratings Yet</td>
+      <td></td>
       <td></td>
     <% } %>
   </tr>

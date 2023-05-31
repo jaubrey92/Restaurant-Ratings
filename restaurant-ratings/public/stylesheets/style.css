@@ -87,3 +87,8 @@ body {
 .login img {
   height: 20px;
 }
+
+.review-user img {
+  border-radius: 50%;
+  height: 40px;
+}
