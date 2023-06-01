@@ -1,12 +1,23 @@
 <%- include('../partials/header') %>
 <section id="all">
-<% restaurants.forEach(function(r) { %>
-  <div><%= r.title %></div>
-  <div><%= r.cuisine %></div>
-  <div><%= r.price %></div>
-  <br>
-  <a class="button" href="/restaurants/<%= r._id %>">Ratings</a>
-<% }); %>
+
+  <table>
+    <tr>
+      <th>Restaurant</th>
+      <th>Cuisine</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+    <% restaurants.forEach(function(r) { %>
+    <tr>
+      <td><%= r.title %></td>
+      <td><%= r.cuisine %></td>
+      <td><%= r.price %></td>
+      <td><a class="button" href="/restaurants/<%= r._id %>">Ratings</a></td>
+    </tr>
+    <% }); %>
+  </table>
+
 </section>
 
 <%- include('../partials/footer') %>

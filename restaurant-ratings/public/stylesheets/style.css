@@ -147,8 +147,12 @@ h1 {
   color: black;
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 10px;
-  grid-column: 1 / span 5;
+  grid-column: 2 / span 3;
   grid-row: 3 / span 4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
 }
 
 #add {
