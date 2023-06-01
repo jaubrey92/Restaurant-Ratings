@@ -21,26 +21,19 @@ async function create(req, res) {
 }
 
 function deleteRating(req, res, next) {
-  // Note the cool "dot" syntax to query on the property of a subdoc
   Restaurant.findOne({
     'ratings._id': req.params.id,
     'ratings.user': req.user._id
   }).then(function (restaurant) {
-    // Rogue user!
     if (!restaurant) return res.redirect('/restaurants')
-    // Remove the review using the remove method available on Mongoose arrays
     restaurant.ratings.remove(req.params.id)
-    // Save the updated movie
     restaurant
       .save()
       .then(function () {
-        // Redirect back to the movie's show view
         res.redirect(`/restaurants/${restaurant._id}`)
       })
       .catch(function (err) {
-        // Let Express display an error
         return next(err)
-        // res.redirect(`/movies/${movie._id}`);
       })
   })
 }
