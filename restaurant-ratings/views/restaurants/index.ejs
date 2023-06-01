@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-
+<section id="all">
 <% restaurants.forEach(function(r) { %>
   <div><%= r.title %></div>
   <div><%= r.cuisine %></div>
@@ -7,5 +7,6 @@
   <br>
   <a class="button" href="/restaurants/<%= r._id %>">Ratings</a>
 <% }); %>
+</section>
 
 <%- include('../partials/footer') %>
