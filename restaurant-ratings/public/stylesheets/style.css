@@ -99,7 +99,7 @@ body {
 
 h1 {
   color: black;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
   text-align: center;
   padding: 15px 15px 15px 15px;
@@ -135,7 +135,7 @@ h1 {
 
 #description {
   color: black;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
   padding: 15px;
   text-align: center;
@@ -145,7 +145,7 @@ h1 {
 
 #all {
   color: black;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
   grid-column: 2 / span 3;
   grid-row: 3 / span 4;
@@ -157,7 +157,7 @@ h1 {
 
 #add {
   color: black;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
   grid-column: 1 / span 5;
   grid-row: 3 / span 1;
@@ -168,8 +168,34 @@ h1 {
 
 #details {
   color: black;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
   grid-column: 1 / span 5;
   grid-row: 3 / span 4;
+}
+
+#basics {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#big {
+  font-size: 22px;
+}
+
+#rate {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0 25px 0;
+}
+
+#ratings {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#ratings > table {
+  width: 100%
 }
