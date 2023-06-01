@@ -205,13 +205,25 @@ h1 {
 }
 
 #ratings {
-  display: flex;
-  justify-content: center;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
-#ratings > table {
-  width: 100%
+#rating-table {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 75px 1fr;
+}
+
+#review-table {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 75px 1fr;
 }
 
 #add-restaurant {
