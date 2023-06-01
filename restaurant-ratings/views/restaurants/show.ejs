@@ -15,7 +15,7 @@
 
 <% if (user) { %>
 
-<section id="rate">
+<section id="review">
 
 <form action="/restaurants/<%= restaurant._id %>/reviews" method="POST">
   <label>Review: </label>
@@ -30,6 +30,10 @@
   </select>
   <input class="add-ratings" type="submit" value="Add Review">
 </form>
+
+</section>
+
+<section id="rate">
 
 <form action="/restaurants/<%= restaurant._id %>/ratings" method="POST">
   <label>Rate Your Employer: </label>
@@ -53,18 +57,18 @@
 
 <table>
   <tr>
-    <th></th>
+    <th>User</th>
     <th>Product Review</th>
     <th>Average Score: </th>
-    <th></th>
-    <th></th>
-    <th>Company Rating</th>
-    <th>Average Score: </th>
-    <th></th>
+    <% let total = 0 %>
+    <% const aveRev = restaurant.reviews.forEach((r) => { %>
+    <% total += r.score %>
+    <% }) %>
+    <th><%= (total / restaurant.reviews.length).toFixed(1) %></th>
   </tr>
-  <tr>
-    <% if (restaurant.reviews.length) { %>
+  <% if (restaurant.reviews.length) { %>
     <% restaurant.reviews.forEach(function(r) { %>
+    <tr>
       <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
       <td><%= r.content %></td>
       <td><%= r.score %></td>
@@ -75,15 +79,32 @@
           </form>
         <% } %>
       </td>
+    </tr>
     <% }) %>
     <% } else { %>
+    <tr>
       <td></td>
       <td>No Reviews Yet</td>
       <td></td>
       <td></td>
+    </tr>
     <% } %>
-    <% if (restaurant.ratings.length) { %>
+</table>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Company Rating</th>
+    <th>Average Score: </th>
+    <% let totalRat = 0 %>
+    <% const aveRat = restaurant.ratings.forEach((ra) => { %>
+    <% totalRat += ra.score %>
+    <% }) %>
+    <th><%= (totalRat / restaurant.ratings.length).toFixed(1) %></th>
+  </tr>
+  <% if (restaurant.ratings.length) { %>
     <% restaurant.ratings.forEach(function(ra) { %>
+    <tr>
       <td class="review-user"><img alt="avatar" src="<%= ra.userAvatar %>" referrerpolicy="no-referrer" ><%= ra.userName %></td>
       <td><%= ra.content %></td>
       <td><%= ra.score %></td>
@@ -94,15 +115,18 @@
           </form>
         <% } %>
       </td>
+    </tr>
     <% }) %>
     <% } else { %>
+    <tr>
       <td></td>
       <td>No Ratings Yet</td>
       <td></td>
       <td></td>
+    </tr>
     <% } %>
-  </tr>
 </table>
+
 </section>
 
 </section>

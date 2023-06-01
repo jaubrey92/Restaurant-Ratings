@@ -151,8 +151,17 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
+
+#all > table {
+  width: 90%;
+  height: 90%;
+}
+
+#all > table, tr, th {
+  border-bottom: 2px solid #00B7FF;
+}
+
 
 #add {
   color: black;
@@ -186,7 +195,13 @@ h1 {
 #rate {
   display: flex;
   justify-content: center;
-  margin: 25px 0 25px 0;
+  margin: 25px 0 25px 25px;
+}
+
+#review {
+  display: flex;
+  justify-content: center;
+  margin: 25px 25px 0 0;
 }
 
 #ratings {
@@ -207,6 +222,7 @@ h1 {
   border-style: solid;
   color: aliceblue;
   text-decoration: none;
+  margin: 10px;
 }
 
 #add-restaurant:hover {
@@ -217,6 +233,7 @@ h1 {
   border-style: solid;
   color: aliceblue;
   text-decoration: none;
+  margin: 10px;
 }
 
 .delete {
@@ -253,4 +270,8 @@ h1 {
   border-color: #00B7FF;
   border-style: solid;
   color: aliceblue;
+}
+
+textarea {
+  width: 100px;
 }
