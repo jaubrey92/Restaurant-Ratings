@@ -15,22 +15,15 @@ const create = async (req, res) => {
   }
 }
 
-const deleteRating = (req, res, next) => {
-  Restaurant.findOne({
+const deleteRating = async (req, res) => {
+  const restaurant = await Restaurant.findOne({
     'ratings._id': req.params.id,
     'ratings.user': req.user._id
-  }).then(function (restaurant) {
-    if (!restaurant) return res.redirect('/restaurants')
-    restaurant.ratings.remove(req.params.id)
-    restaurant
-      .save()
-      .then(function () {
-        res.redirect(`/restaurants/${restaurant._id}`)
-      })
-      .catch(function (err) {
-        return next(err)
-      })
   })
+  if (!restaurant) return res.redirect('/restaurants')
+  restaurant.ratings.remove(req.params.id)
+  await restaurant.save()
+  res.redirect(`/restaurants/${restaurant._id}`)
 }
 
 module.exports = {
