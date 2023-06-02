@@ -1,22 +1,15 @@
 const Restaurant = require('../models/restaurant')
 
-module.exports = {
-  index,
-  new: newRestaurant,
-  create,
-  show
-}
-
-async function index(req, res) {
+const index = async (req, res) => {
   const restaurants = await Restaurant.find({})
   res.render('restaurants/index', { title: 'All Restaurants', restaurants })
 }
 
-function newRestaurant(req, res) {
+const newRestaurant = (req, res) => {
   res.render('restaurants/new', { title: 'Add a New Restaurant', errorMsg: '' })
 }
 
-async function create(req, res) {
+const create = async (req, res) => {
   try {
     await Restaurant.create(req.body)
     res.redirect('/restaurants/')
@@ -26,7 +19,14 @@ async function create(req, res) {
   }
 }
 
-async function show(req, res) {
+const show = async (req, res) => {
   const restaurant = await Restaurant.findById(req.params.id)
   res.render('restaurants/show', { title: 'Ratings and Reviews', restaurant })
+}
+
+module.exports = {
+  index,
+  new: newRestaurant,
+  create,
+  show
 }

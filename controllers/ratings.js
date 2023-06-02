@@ -1,11 +1,6 @@
 const Restaurant = require('../models/restaurant')
 
-module.exports = {
-  create,
-  delete: deleteRating
-}
-
-async function create(req, res) {
+const create = async (req, res) => {
   const restaurant = await Restaurant.findById(req.params.id)
   req.body.user = req.user._id
   req.body.userName = req.user.name
@@ -20,7 +15,7 @@ async function create(req, res) {
   }
 }
 
-function deleteRating(req, res, next) {
+const deleteRating = (req, res, next) => {
   Restaurant.findOne({
     'ratings._id': req.params.id,
     'ratings.user': req.user._id
@@ -36,4 +31,9 @@ function deleteRating(req, res, next) {
         return next(err)
       })
   })
+}
+
+module.exports = {
+  create,
+  delete: deleteRating
 }

@@ -71,7 +71,7 @@
     <th><%= (total / restaurant.reviews.length).toFixed(1) %></th>
   </tr>
   <% if (restaurant.reviews.length) { %>
-    <% restaurant.reviews.forEach(function(r) { %>
+    <% restaurant.reviews.forEach((r) => { %>
     <tr>
       <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
       <td><%= r.content %></td>
@@ -111,7 +111,7 @@
     <th><%= (totalRat / restaurant.ratings.length).toFixed(1) %></th>
   </tr>
   <% if (restaurant.ratings.length) { %>
-    <% restaurant.ratings.forEach(function(ra) { %>
+    <% restaurant.ratings.forEach((ra) => { %>
     <tr>
       <td class="review-user"><img alt="avatar" src="<%= ra.userAvatar %>" referrerpolicy="no-referrer" ><%= ra.userName %></td>
       <td><%= ra.content %></td>
