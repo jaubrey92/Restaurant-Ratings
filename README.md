@@ -73,4 +73,4 @@
 
 #### CSS Grid Guide: [CSS Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
-#### CSS Styling: [CSS Help](https://www.w3schools.com/css/css_table.asp)
+#### CSS Styling: [W3 Schools](https://www.w3schools.com/css/css_table.asp)
