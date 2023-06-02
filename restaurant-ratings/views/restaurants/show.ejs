@@ -63,7 +63,7 @@
   <tr>
     <th>User</th>
     <th>Product Review</th>
-    <th>Average Score: </th>
+    <th>Score: </th>
     <% let total = 0 %>
     <% const aveRev = restaurant.reviews.forEach((r) => { %>
     <% total += r.score %>
@@ -103,7 +103,7 @@
   <tr>
     <th>User</th>
     <th>Company Rating</th>
-    <th>Average Score: </th>
+    <th>Score: </th>
     <% let totalRat = 0 %>
     <% const aveRat = restaurant.ratings.forEach((ra) => { %>
     <% totalRat += ra.score %>
